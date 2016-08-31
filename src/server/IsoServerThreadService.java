@@ -17,12 +17,12 @@ import java.net.Socket;
  * @author Mihaela Tudose
  */
 public class IsoServerThreadService extends Thread{
-    private Socket socket;
+    private Socket mysocket;
     private PrintWriter out;
     private BufferedReader in; 
 
     public IsoServerThreadService(Socket socket) throws IOException {
-        this.socket=socket;
+        this.mysocket=socket;
         this.out = new PrintWriter(socket.getOutputStream(),true);
         this.in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
     }
